@@ -5,7 +5,7 @@ DigitalOut myled(LED1);
 int main() {
     
     printf("RTC example\n"); 
-    set_time(1387188323); // Set RTC time to 16 December 2013 10:05:23 UTC
+  set_time(1489560994);  // Set RTC time to 2017/03/15 06:56:34 (UTC)
     printf("Date and time are set.\n");
 
     while(1) {
