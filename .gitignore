@@ -1,0 +1,13 @@
+d2l_files
+*.pdf
+*.zip
+EventRecorderStub.scvd
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+*.uvopt
+*.uvproj
+.#*
+
+BUILD/
+*.o
