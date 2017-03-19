@@ -21,6 +21,7 @@
 	void init_lcd(void);
 	void set_cursor(int column, int row);
 	void print_lcd(const char *string);
+	void clear_lcd(void);
 
 #endif
 
