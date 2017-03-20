@@ -6,8 +6,6 @@ SERIAL COMMUNICATION
 	
 	Input: None
 	Output: PC
-
-	GOOD LUCK!
  *----------------------------------------------------------------------------*/
 
 #include "mbed.h"
@@ -26,8 +24,7 @@ int main(){
   Print "Hello mbed" to the PC serial monitor
   */
 
-  //Write your code here
+  device.baud(9600);
+  device.printf("Hello mbed\n");
   
 }
-
-// *******************************ARM University Program Copyright (c) ARM Ltd 2014*************************************
