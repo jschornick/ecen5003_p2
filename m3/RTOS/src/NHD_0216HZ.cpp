@@ -25,19 +25,21 @@ void NHD_0216HZ::shift_out(int data) {
 void NHD_0216HZ::init_lcd(void) {
     wait_ms(40);
     shift_out(0x30);    //function set 8-bit
-    wait_us(37);
-    write_cmd(0x20);    //function set
-    wait_us(37);
-    write_cmd(0x20);    //function set
-    wait_us(37);
-    write_cmd(0x0C);    //display ON/OFF
-    wait_us(37);
+    wait_ms(10);
+    write_cmd(0x30);    //function set
+    wait_ms(10);
+    write_cmd(0x30);    //function set
+    wait_ms(10);
+    write_cmd(0x20);    //function set 4-bit
+    wait_ms(10);
+    write_cmd(0x28);    //function set 4-bit, 2-line
+    wait_ms(10);
+    write_cmd(0x0C);    //display ON, no cursor?
+    wait_ms(10);
+    write_cmd(0x06);    //entry-mode set
+    wait_ms(10);
     write_cmd(0x01);    //display clear
     wait_us(1520);
-    write_cmd(0x06);    //entry-mode set
-    wait_us(37);
-    write_cmd(0x28);    //function set
-    wait_us(37);
     set_cursor(0,0);
 }
 

@@ -55,7 +55,7 @@ void temp_thread(void const *args){
     temp = temp_sensor.read();
     osMutexWait(lcd_mutex, osWaitForever);
     lcd.set_cursor(0,1);
-    lcd.printf("Temp: %0.2f", temp);
+    lcd.printf("Temp: %0.2f ", temp);
     osMutexRelease(lcd_mutex);
     osDelay(100);
   }
@@ -89,7 +89,7 @@ void count_thread(void const *args){
   while(1) { 
     osMutexWait(lcd_mutex, osWaitForever);
     lcd.set_cursor(0,0);
-    lcd.printf("Count: %04d", count);
+    lcd.printf("Count: %04d ", count);
     osMutexRelease(lcd_mutex);
     count++;
     osDelay(1000);
