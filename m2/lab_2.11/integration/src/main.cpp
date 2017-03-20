@@ -13,12 +13,12 @@ SERIAL COMMUNICATION
 
 #include "NHD_0216HZ.h"
 #include "DS1631.h"
-#inlcude "pindef.h"
+#include "pindef.h"
 
 //Define the LCD and the temperature sensor
 
-//Write your code here
-
+NHD_0216HZ lcd(SPI_CS, SPI_MOSI, SPI_SCLK);
+DS1631 temp_sensor(I2C_SDA, I2C_SCL, 0x90);
 
 //Define a variable to store temperature measurement
 float temp;
@@ -29,20 +29,16 @@ float temp;
 
 int main() {
 	//Initialise the LCD
-	
-	//Write your code here
-	
+	lcd.init_lcd();
 	
 	while(1){
 		/*
 		Read the temperature from the DS1631
 		Update the LCD with new temperature measurement
 		*/
-		
-		//Write your code here
-		
+    temp = temp_sensor.read();
+    lcd.set_cursor(0,0);
+    lcd.printf("Temp: %0.2f", temp);
 		
 	}
 }
-
-// *******************************ARM University Program Copyright (c) ARM Ltd 2014*************************************
